@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHAI BROTHERS - Free Fire Diamond Top-Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="diamond-spin">
+                <i class="fas fa-gem"></i>
+            </div>
+            <p>Loading BHAI BROTHERS...</p>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-text">Order placed successfully!</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h1>BHAI BROTHERS</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="#diamonds" class="nav-link"><i class="fas fa-gem"></i> Diamonds</a>
+                <a href="#weekly" class="nav-link"><i class="fas fa-calendar-week"></i> Weekly/Monthly</a>
+                <a href="#evo" class="nav-link"><i class="fas fa-bolt"></i> Evolution</a>
+                <a href="#orders" class="nav-link"><i class="fas fa-shopping-cart"></i> Orders</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Contact</a>
+                <div class="admin-btn" id="adminToggle">
+                    <i class="fas fa-user-shield"></i> Admin Login
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero animate-on-scroll" id="home">
+            <div class="hero-content">
+                <h2><span class="highlight">Instant</span> Free Fire Diamonds</h2>
+                <p class="subtitle">Get your Free Fire diamonds instantly with BHAI BROTHERS! Safe, secure, and fastest delivery. Trusted by thousands of players across Bangladesh.</p>
+                
+                <div class="contact-banner">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp Support</h4>
+                            <p class="contact-number">01748320647</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>
+                            <h4>Payment Number</h4>
+                            <p class="contact-number">01540651159 (Bkash/Nagad)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalCustomers">5,247+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalOrders">12,847+</h3>
+                            <p>Orders Delivered</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>5-15 Min</h3>
+                            <p>Delivery Time</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>99.8%</h3>
+                            <p>Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diamond Packages -->
+        <section class="diamond-section animate-on-scroll" id="diamonds">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-gem"></i> Diamond Top-Up Packages</h2>
+                <p class="section-subtitle">Choose from our range of diamond packages</p>
+            </div>
+            <div class="diamond-grid" id="diamondPackages">
+                <!-- Loaded from packages.js -->
+            </div>
+        </section>
+
+        <!-- Weekly & Monthly Packages -->
+        <section class="diamond-section animate-on-scroll" id="weekly">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Weekly & Monthly Packages</h2>
+                <p class="section-subtitle">Special passes for regular players</p>
+            </div>
+            <div class="diamond-grid" id="weeklyPackages">
+                <!-- Loaded from packages.js -->
+            </div>
+        </section>
+
+        <!-- Evolution Access -->
+        <section class="diamond-section animate-on-scroll" id="evo">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-bolt"></i> Evolution Access</h2>
+                <p class="section-subtitle">Unlock exclusive evolution features</p>
+            </div>
+            <div class="diamond-grid" id="evoPackages">
+                <!-- Loaded from packages.js -->
+            </div>
+        </section>
+
+        <!-- Live Orders -->
+        <section class="live-orders animate-on-scroll" id="orders">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-bolt"></i> Recent Orders</h2>
+                <button class="refresh-btn" id="refreshOrders">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+            <div class="orders-container" id="liveOrdersContainer">
+                <!-- Loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Payment Instructions -->
+        <section class="instructions animate-on-scroll">
+            <h2><i class="fas fa-info-circle"></i> How to Order</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Select Package</h3>
+                        <p>Choose your desired diamond package from above</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Make Payment</h3>
+                        <p>Send money to <strong>01540651159</strong> (Bkash/Nagad)</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Submit Details</h3>
+                        <p>Fill the order form with your details and Transaction ID</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Get Diamonds</h3>
+                        <p>Receive diamonds in your account within 5-15 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-crown"></i>
+                    <h3>BHAI BROTHERS</h3>
+                </div>
+                <p class="footer-description">Your trusted partner for Free Fire diamond top-up services in Bangladesh.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#diamonds"><i class="fas fa-chevron-right"></i> Diamond Packages</a></li>
+                    <li><a href="#weekly"><i class="fas fa-chevron-right"></i> Weekly/Monthly</a></li>
+                    <li><a href="#evo"><i class="fas fa-chevron-right"></i> Evolution Access</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> Phone: 01748320647</li>
+                    <li><i class="fab fa-whatsapp"></i> WhatsApp: 01748320647</li>
+                    <li><i class="fas fa-money-bill-wave"></i> Bkash/Nagad: 01540651159</li>
+                    <li><i class="fas fa-clock"></i> 24/7 Service Available</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Business Hours</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-clock"></i> Monday - Sunday: 24/7</li>
+                    <li><i class="fas fa-bolt"></i> Instant Delivery</li>
+                    <li><i class="fas fa-shield-alt"></i> 100% Safe & Secure</li>
+                    <li><i class="fas fa-headset"></i> 24/7 Support</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2026 BHAI BROTHERS Free Fire Top-Up Service. All rights reserved.</p>
+            <p class="developer">Developed by <span>RIPON HASAN</span> | Created in 2026</p>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="close-modal" id="closeModal">&times;</div>
+            <h2><i class="fas fa-shopping-cart"></i> Complete Your Order</h2>
+            
+            <div class="order-steps">
+                <div class="step-indicator active">1. Package</div>
+                <div class="step-indicator">2. Details</div>
+                <div class="step-indicator">3. Payment</div>
+            </div>
+            
+            <form id="orderForm">
+                <div class="form-step active" id="step1">
+                    <div class="selected-package-info">
+                        <h3 id="selectedPackageName"></h3>
+                        <p id="selectedPackagePrice"></p>
+                    </div>
+                    <button type="button" class="next-btn" onclick="nextStep()">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="form-step" id="step2">
+                    <div class="form-group">
+                        <label for="playerId"><i class="fas fa-id-card"></i> Free Fire Player ID *</label>
+                        <input type="text" id="playerId" placeholder="Enter your Free Fire ID" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="playerName"><i class="fas fa-user"></i> Player Name *</label>
+                        <input type="text" id="playerName" placeholder="Enter your Free Fire Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="playerServer"><i class="fas fa-globe"></i> Server Region *</label>
+                        <select id="playerServer" required>
+                            <option value="">Select Server</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="India">India</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="MENA">MENA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="prev-btn" onclick="prevStep()">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="button" class="next-btn" onclick="nextStep()">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-step" id="step3">
+                    <div class="payment-info-card">
+                        <h4><i class="fas fa-money-bill-wave"></i> Payment Information</h4>
+                        <p>Send exact amount to:</p>
+                        <div class="payment-number">01540651159</div>
+                        <p class="payment-methods">Bkash / Nagad / Rocket</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transactionId"><i class="fas fa-receipt"></i> Transaction ID *</label>
+                        <input type="text" id="transactionId" placeholder="Enter Transaction ID" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentNumber"><i class="fas fa-mobile-alt"></i> Your Payment Number *</label>
+                        <input type="text" id="paymentNumber" placeholder="Enter your Bkash/Nagad number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod"><i class="fas fa-credit-card"></i> Payment Method *</label>
+                        <select id="paymentMethod" required>
+                            <option value="">Select Method</option>
+                            <option value="bkash">Bkash</option>
+                            <option value="nagad">Nagad</option>
+                            <option value="rocket">Rocket</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="prev-btn" onclick="prevStep()">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="submit" class="submit-order">
+                            <i class="fab fa-whatsapp"></i> Submit Order
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-content">
+            <div class="admin-header">
+                <div class="admin-title">
+                    <h2><i class="fas fa-user-shield"></i> Admin Dashboard</h2>
+                    <p>Manage orders and monitor business</p>
+                </div>
+                <button class="close-admin" id="closeAdmin">
+                    <i class="fas fa-times"></i> Close
+                </button>
+            </div>
+            
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="adminTotalOrders">0</h3>
+                        <p>Total Orders</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="adminPendingOrders">0</h3>
+                        <p>Pending Orders</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="adminCompletedOrders">0</h3>
+                        <p>Completed Orders</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="adminTodayRevenue">৳ 0</h3>
+                        <p>Today's Revenue</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="showTab('allOrders')">
+                    <i class="fas fa-list"></i> All Orders
+                </button>
+                <button class="tab-btn" onclick="showTab('pendingOrders')">
+                    <i class="fas fa-clock"></i> Pending
+                </button>
+                <button class="tab-btn" onclick="showTab('completedOrders')">
+                    <i class="fas fa-check-circle"></i> Completed
+                </button>
+                <button class="tab-btn" onclick="showTab('cancelledOrders')">
+                    <i class="fas fa-times-circle"></i> Cancelled
+                </button>
+                <button class="tab-btn" onclick="showTab('managePackages')">
+                    <i class="fas fa-gem"></i> Manage Packages
+                </button>
+            </div>
+            
+            <!-- All Orders Tab -->
+            <div class="tab-content active" id="allOrdersTab">
+                <div class="orders-table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Player Info</th>
+                                <th>Package</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrdersTable">
+                            <!-- Orders loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Pending Orders Tab -->
+            <div class="tab-content" id="pendingOrdersTab">
+                <div class="orders-table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Player Info</th>
+                                <th>Package</th>
+                                <th>Amount</th>
+                                <th>Time</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pendingOrdersTable">
+                            <!-- Pending orders loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Completed Orders Tab -->
+            <div class="tab-content" id="completedOrdersTab">
+                <div class="orders-table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Player Info</th>
+                                <th>Package</th>
+                                <th>Amount</th>
+                                <th>Completed Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="completedOrdersTable">
+                            <!-- Completed orders loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Cancelled Orders Tab -->
+            <div class="tab-content" id="cancelledOrdersTab">
+                <div class="orders-table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Player Info</th>
+                                <th>Package</th>
+                                <th>Amount</th>
+                                <th>Cancelled Time</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cancelledOrdersTable">
+                            <!-- Cancelled orders loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Manage Packages Tab -->
+            <div class="tab-content" id="managePackagesTab">
+                <div class="packages-management">
+                    <div class="section-header">
+                        <h3>Manage Packages</h3>
+                        <button class="add-package-btn" onclick="showAddPackageModal()">
+                            <i class="fas fa-plus"></i> Add New Package
+                        </button>
+                    </div>
+                    
+                    <div class="package-categories">
+                        <div class="category-section">
+                            <h4><i class="fas fa-gem"></i> Diamond Packages</h4>
+                            <div class="package-list" id="manageDiamondPackages">
+                                <!-- Diamond packages loaded dynamically -->
+                            </div>
+                        </div>
+                        
+                        <div class="category-section">
+                            <h4><i class="fas fa-calendar-week"></i> Weekly/Monthly</h4>
+                            <div class="package-list" id="manageWeeklyPackages">
+                                <!-- Weekly packages loaded dynamically -->
+                            </div>
+                        </div>
+                        
+                        <div class="category-section">
+                            <h4><i class="fas fa-bolt"></i> Evolution Access</h4>
+                            <div class="package-list" id="manageEvoPackages">
+                                <!-- Evo packages loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Package Modal -->
+    <div class="modal" id="addPackageModal">
+        <div class="modal-content">
+            <div class="close-modal" onclick="closeAddPackageModal()">&times;</div>
+            <h2><i class="fas fa-plus-circle"></i> Add New Package</h2>
+            
+            <form id="addPackageForm">
+                <div class="form-group">
+                    <label for="packageName">Package Name *</label>
+                    <input type="text" id="packageName" placeholder="e.g., 100 Diamonds" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="packagePrice">Price (in Taka) *</label>
+                    <input type="number" id="packagePrice" placeholder="e.g., 100" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="packageCategory">Category *</label>
+                    <select id="packageCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="diamond">Diamond Package</option>
+                        <option value="weekly">Weekly/Monthly</option>
+                        <option value="evo">Evolution Access</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="packageDescription">Description</label>
+                    <textarea id="packageDescription" placeholder="Optional description"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="packagePopular">
+                        <input type="checkbox" id="packagePopular"> Mark as Popular
+                    </label>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="button" class="prev-btn" onclick="closeAddPackageModal()">
+                        Cancel
+                    </button>
+                    <button type="submit" class="submit-order">
+                        <i class="fas fa-save"></i> Save Package
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="packages.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
